@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86a85932-7af2-4c0b-b9b6-cb2eddb0c84d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,6 +36,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="LICENSE" value="1" />
+          <entry key="gitignore" value="1" />
           <entry key="java" value="3" />
           <entry key="md" value="1" />
           <entry key="sbt" value="1" />
@@ -43,13 +48,15 @@
         <counts>
           <entry key="JAVA" value="3" />
           <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="Scala" value="23" />
           <entry key="sbt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="403" />
+          <entry key="gitignore" value="27" />
+          <entry key="md" value="404" />
           <entry key="sbt" value="189" />
           <entry key="sbtShell" value="33" />
           <entry key="scala" value="7216" />
@@ -58,7 +65,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="2" />
-          <entry key="Markdown" value="401" />
+          <entry key="Markdown" value="402" />
+          <entry key="PLAIN_TEXT" value="27" />
           <entry key="Scala" value="7216" />
           <entry key="sbt" value="189" />
           <entry key="sbtShell" value="33" />
@@ -68,11 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="35" />
+            <state relative-caret-position="450">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -116,10 +124,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/StreamAggregatorDemo.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-993">
+            <state relative-caret-position="-855">
               <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
               <folding>
                 <element signature="e#1#54#0" expanded="true" />
@@ -132,11 +140,27 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="347">
-                <caret line="53" selection-start-line="53" selection-end-line="53" />
+              <first_editor relative-caret-position="470">
+                <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
               </first_editor>
               <second_editor />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2506" />
           </provider>
         </entry>
       </file>
@@ -180,9 +204,10 @@
         <option value="$PROJECT_DIR$/src/main/scala/Constants.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Main.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/utils/SchemaUtils.scala" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/scala/utils/SessionUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/StreamAggregatorDemo.scala" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -247,7 +272,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1593991364003" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1593991784594" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -341,12 +366,12 @@
       <workItem from="1593625964940" duration="19577000" />
       <workItem from="1593714971881" duration="1925000" />
       <workItem from="1593716992678" duration="24911000" />
-      <workItem from="1593815425242" duration="51861000" />
+      <workItem from="1593815425242" duration="52337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98274000" />
+    <option name="totallyTimeSpent" value="98750000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,8 +384,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="44" y="23" width="1636" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25595984" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25595984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -376,7 +402,7 @@
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49937266" weight="0.32941177" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32941177" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="9" sideWeight="0.49811795" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49749058" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49749058" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5025094" side_tool="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32941177" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
@@ -500,13 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/spark/spark-sql_2.11/2.4.6/spark-sql_2.11-2.4.6-sources.jar!/org/apache/spark/sql/Dataset.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -552,16 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="347">
-            <caret line="53" selection-start-line="53" selection-end-line="53" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/utils/SessionUtils.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -571,11 +580,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/StreamAggregatorDemo.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-993">
+        <state relative-caret-position="-855">
           <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding>
             <element signature="e#1#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2506" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="470">
+            <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
