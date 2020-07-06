@@ -70,8 +70,8 @@ class StreamAggregatorDemo(spark: SparkSession, kafkaBrokers: String, schemaRegi
     // be preserved in Spark state in correlation to the other stream.
     val joinCondition = s"""
       | ${Constants.PGV_USER_ID} = ${Constants.USERS_USER_ID} AND
-      | ${Constants.USERS_TIMESTAMP} >= ${Constants.PGV_TIMESTAMP} - interval 30 seconds AND
-      | ${Constants.USERS_TIMESTAMP} <= ${Constants.PGV_TIMESTAMP} + interval 30 seconds
+      | ${Constants.USERS_TIMESTAMP} >= ${Constants.PGV_TIMESTAMP} - interval 20 seconds AND
+      | ${Constants.USERS_TIMESTAMP} <= ${Constants.PGV_TIMESTAMP} + interval 20 seconds
       """.stripMargin
 
     pageViewsStream
@@ -83,7 +83,7 @@ class StreamAggregatorDemo(spark: SparkSession, kafkaBrokers: String, schemaRegi
         window(col(Constants.PGV_TIMESTAMP), "1 minutes", "10 seconds"))
       // Calculate these metrics per window, gender, and pageid -
       // we find the ranking a bit later since spark doesn't allow consequent aggregations in the same stream
-      .agg(sum(Constants.VIEW_TIME).as(Constants.VIEW_TIME), approx_count_distinct(Constants.PGV_USER_ID).as(Constants.USERS_COUNT))
+      .agg(sum(Constants.VIEW_TIME).as(Constants.VIEW_TIME_SUM), approx_count_distinct(Constants.PGV_USER_ID).as(Constants.USERS_COUNT))
       // Get all columns, plus unbox window start/end time interval
       .select("*", "window.*").drop("window")
   }
@@ -99,23 +99,20 @@ class StreamAggregatorDemo(spark: SparkSession, kafkaBrokers: String, schemaRegi
         .withColumn(Constants.WINDOW_RANK, rank().over(Window.partitionBy(Constants.GENDER, Constants.PAGE_ID).orderBy(col("end").desc)))
         .where(col(Constants.WINDOW_RANK).equalTo(1))
         // Find the 10 most viewed pages by viewtime for every value of gender
-        .withColumn(Constants.GENDER_RANK, dense_rank().over(Window.partitionBy(Constants.GENDER).orderBy(col(Constants.VIEW_TIME).desc)))
+        .withColumn(Constants.GENDER_RANK, dense_rank().over(Window.partitionBy(Constants.GENDER).orderBy(col(Constants.VIEW_TIME_SUM).desc)))
         .where(col(Constants.GENDER_RANK).leq(10))
-        .sort(col(Constants.GENDER), col(Constants.GENDER_RANK).desc)
+        .sort(col(Constants.GENDER), col(Constants.VIEW_TIME_SUM).desc, col(Constants.GENDER_RANK).desc)
         .select(Constants.OUTPUT_COLUMNS.map(col):_*)
-//        .transform(dataToAvroFormat)
+        .transform(dataToAvroFormat)
         .write
           // Finally write to Kafka
-          .format("console")
-          .option("truncate", "false")
-//          .format("kafka")
-//          .option("kafka.bootstrap.servers", kafkaBrokers)
-//          .option("topic", Constants.TOP_PAGES_TOPIC)
+          .format("kafka")
+          .option("kafka.bootstrap.servers", kafkaBrokers)
+          .option("topic", Constants.TOP_PAGES_TOPIC)
           .save()
   }
 
   def dataToAvroFormat(dataFrame: DataFrame): DataFrame = {
-    dataFrame.printSchema()
     // Fetch Avro schema for top_ages Kafka topic
     val topPagesConfig =  SchemaUtils.getTopicSchemaConfig(Constants.TOP_PAGES_TOPIC, schemaRegistryURL)
     val allColumns = struct(dataFrame.columns.head, dataFrame.columns.tail: _*)

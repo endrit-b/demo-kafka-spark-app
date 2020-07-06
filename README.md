@@ -1,5 +1,5 @@
-#### Kafka-Spark end-to-end Demo App
-<hr>
+Kafka-Spark end-to-end Demo App
+---
 
 __About the Assignment:__
 
@@ -11,12 +11,12 @@ __About the Assignment:__
     - Uses a 1 minute hopping window with 10 second advances to compute the 10 most viewed pages by viewtime for every value of gender
     - Once per minute produces a message into the top_pages topic that contains the gender, pageid, sum of view time in the latest window and distinct count of user ids in the latest window
 
-### Prerequisites
-<hr>
+Prerequisites
+---
 
 To be able to run this app, make sure you have the following installed:
 * Scala v2.11.11
-* Sbt v1.13.x
+* Sbt v1.3.13
 * Kafka v0.10+
 * Use Kafka Connect DataGenConnector to produce data using the users and pageview quickstarts
 * Also make sure the output `top_pages` Avro schema looks like below:
@@ -38,16 +38,19 @@ To be able to run this app, make sure you have the following installed:
           },
           {
             "default": null,
-            "name": "viewtime",
+            "name": "viewtime_sum",
             "type": ["null", "long"]
           },
           {
             "default": 0,
-            "name": "usercount",
+            "name": "users_count",
             "type": "long"
           }
         ]
       }
     ```
 
-### Run application
+Run application
+---
+
+__TO BE DONE__
