@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="demo-kafka-spark-app">
+    <profile name="sbt 1" modules="my-project,demo-kafka-spark-app">
       <parameters>
         <parameter value="-target:jvm-1.8" />
       </parameters>

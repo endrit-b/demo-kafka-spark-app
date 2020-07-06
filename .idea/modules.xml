@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo-kafka-spark-app.iml" filepath="$PROJECT_DIR$/.idea/modules/demo-kafka-spark-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo-kafka-spark-app-build.iml" filepath="$PROJECT_DIR$/.idea/modules/demo-kafka-spark-app-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/root-build.iml" filepath="$PROJECT_DIR$/.idea/modules/root-build.iml" />
     </modules>
   </component>
 </project>

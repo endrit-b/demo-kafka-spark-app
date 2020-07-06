@@ -14,10 +14,11 @@ __About the Assignment:__
 Prerequisites
 ---
 
-To be able to run this app, make sure you have the following installed:
+To be able to run this app, make sure you have installed the following:
 * Scala v2.11.11
-* Sbt v1.3.13
+* Sbt v1.3.13 (Scala build tool)
 * Kafka v0.10+
+* Spark 2.4.x
 * Use Kafka Connect DataGenConnector to produce data using the users and pageview quickstarts
 * Also make sure the output `top_pages` Avro schema looks like below:
     ```json
@@ -50,7 +51,17 @@ To be able to run this app, make sure you have the following installed:
       }
     ```
 
-Run application
+
+Installation and Usage
 ---
 
-__TO BE DONE__
+Once you install the prerequisites, just go ahead and clone the repository, then run commands below (on the project root):
+```bash
+# Prepare the fat jar for spark-submit
+sbt assembly
+```
+
+After that run command:
+```bash
+ spark-submit --class io.endrit.sample.Main target/scala-2.11/demo-kafka-spark-app-assembly-0.0.1.jar
+```
